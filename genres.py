@@ -1,47 +1,55 @@
 genres = {
+    "No Preference",
     "Art": {
         "Architecture",
         "Art History",
         "Photography",
         "Graphic Novels",
         "Comics",
-        "Manga"
+        "Manga",
+        "No Preference"
     },
     "Biography": {
         "Autobiography",
         "Memoir",
         "True Crime",
-        "Diary"
+        "Diary",
+        "No Preference"
     },
     "Business": {
         "Finance",
         "Economics",
         "Leadership",
         "Marketing",
-        "Entrepreneurship"
+        "Entrepreneurship",
+        "No Preference"
     },
     "Children's": {
         "Picture Books",
         "Middle Grade",
         "Young Adult",
-        "Children's Classics"
+        "Children's Classics",
+        "No Preference"
     },
     "Classics": {
         "Classic Literature",
         "Ancient Literature",
         "Mythology",
         "Fairy Tales",
-        "Folk Tales"
+        "Folk Tales",
+        "No Preference"
     },
     "Comedy": {
         "Satire",
         "Humor",
-        "Comedy"
+        "Comedy",
+        "No Preference"
     },
     "Cooking": {
         "Cookbooks",
         "Food and Drink",
-        "Wine"
+        "Wine",
+        "No Preference"
     },
     "Crime": {
         "Mystery",
@@ -49,7 +57,8 @@ genres = {
         "Suspense",
         "Detective",
         "Crime",
-        "Noir"
+        "Noir",
+        "No Preference"
     },
     "Fantasy": {
         "Epic Fantasy",
@@ -57,7 +66,8 @@ genres = {
         "Urban Fantasy",
         "Paranormal",
         "Mythical Creatures",
-        "Magic"
+        "Magic",
+        "No Preference"
     },
     "Fiction": {
         "Literary Fiction",
@@ -67,13 +77,15 @@ genres = {
         "Horror",
         "Romance",
         "Chick Lit",
-        "Adventure"
+        "Adventure",
+        "No Preference"
     },
     "History": {
         "Historical",
         "Biographical",
         "War",
-        "Military History"
+        "Military History",
+        "No Preference"
     },
     "Horror": {
         "Gothic",
@@ -81,13 +93,15 @@ genres = {
         "Vampires",
         "Zombies",
         "Haunted Houses",
-        "Monsters"
+        "Monsters",
+        "No Preference"
     },
     "Music": {
         "Music",
         "Music History",
         "Music Theory",
-        "Biographies"
+        "Biographies",
+        "No Preference"
     },
     "Mystery": {
         "Cozy Mystery",
@@ -95,27 +109,31 @@ genres = {
         "Amateur Sleuth",
         "Crime",
         "Suspense",
-        "Detective"
+        "Detective",
+        "No Preference"
     },
     "Poetry": {
         "Classical Poetry",
         "Modern Poetry",
         "Anthologies",
-        "Love Poetry"
+        "Love Poetry",
+        "No Preference"
     },
     "Religion": {
         "Christian",
         "Islam",
         "Buddhism",
         "Hinduism",
-        "Religious Fiction"
+        "Religious Fiction",
+        "No Preference"
     },
     "Romance": {
         "Contemporary Romance",
         "Historical Romance",
         "Paranormal Romance",
         "Erotic Romance",
-        "LGBT Romance"
+        "LGBT Romance",
+        "No Preference"
     },
     "Science": {
         "Popular Science",
@@ -124,26 +142,31 @@ genres = {
         "Physics",
         "Chemistry",
         "Astronomy",
-        "Geology"
+        "Geology",
+        "No Preference"
     },
     "Science Fiction": {
         "Hard Science Fiction",
         "Space Opera",
         "Aliens",
         "Dystopia",
-        "Cyberpunk"
+        "Cyberpunk",
+        "No Preference"
     },
     "Self Help": {
         "Personal Development",
         "Self Improvement",
-        "Motivational"
+        "Motivational",
+        "No Preference"
     },
     "Sports": {
         "Sports",
-        "Biographies"
+        "Biographies",
+        "No Preference"
     },
     "Travel": {
         "Travel",
-        "Adventure"
+        "Adventure",
+        "No Preference"
     }
 }
