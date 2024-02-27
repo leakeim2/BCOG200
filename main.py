@@ -1,3 +1,5 @@
+PSEUDO CODE
+
 def main:
     print("Hello. I will help you find a book. This book may be well regarded, but the consenus can be wrong and there are brutal reviews to prove it ",
           "These books are popular, however sometimes people are wrong and have no taste. Lets get started.\n"
