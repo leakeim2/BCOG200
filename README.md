@@ -2,7 +2,6 @@
 BCOG 200 Project
 
 Title: "Bad Reviews(Perchance)"
-* the title is not in contemplation it includes the perchance
 
 1) The project idea is partially based on a book generator function. The program will only give the user the most horrid 1-star reviews of books that are rated quite highly. The user theoretically doesn't know the books popularity or rating and the rating is useless anyways because I just read the most terrible, ill written book I have come across in a while, and it was given over 4.2 starts on good reads. The user can choose to read the book or not based on the review, but the concept is that since they've read the lowest opinion of said book and cannot see anything else, they will enjoy it more than they would otherwise, unless the book is as horrid as the review claimed which is not unlikely. At least at that point disaster was among expectations.
 2)
