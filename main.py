@@ -1,3 +1,10 @@
+import tkinter as tk
+from Buttons import Buttons
+from BookSelector import BookSelector
+from ReviewScraper import ReviewScraper
+from ReviewPresenter import ReviewPresenter
+
+
 def main:
     while True:
         print("Hello. I will help you find a book. This book may be well regarded, but the consenus can be wrong and there are brutal reviews to prove it. ",
