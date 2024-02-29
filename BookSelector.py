@@ -29,7 +29,7 @@ class BookSelector:
                                 synopsis = item['volumeInfo]['description']
                                 pageCount = item['volumeInfo']['pageCount']
                                 volumeId = item['accessInfo']['volumeId']
-                                books.append((volumeId,title,author,rating,synopsis,pageCount))
+                                books.append({'volumeId': volumeId,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount})
                                 if len(books) == n: break
                     else:
                         if 'nextPageToken' in data:
