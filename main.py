@@ -19,11 +19,12 @@ def main:
         user_options = input("Would you like options of books to choose from based on reviews? Enter Y/N")
         if user_options == 'N':
             user_options = False
+        else: user_options = True
         # other filters maybe
         # pass the info to Book Selector
         print("Sounds good. I'll take a look in the back and get you something to read")
-        books = BookSelector(user_genre,user_options) # if they don't want options then this would be just one book
-        reviews = ReviewScraper(books)
+        b = BookSelector(user_genre,user_options) # if they don't want options then this would be just one book
+        reviews = ReviewScraper(b.books())
 
         stop = True
         while stop:
