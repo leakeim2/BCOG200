@@ -8,7 +8,7 @@ class BookSelector:
         self.genre = user_genre
         self.numBooks = 5
         if not user_options: self.numBooks = 1
-        self.books = {}
+        self.books = []
         self.search_params = {'q': 'subject:'+self.genre, 'maxResults':20}
         self.params = {'q':'+'.join([f"{key}:{value}" for key, value in search_params.items() if value is not None]), 'key': API_KEY}
         self.fetch(self.numBooks)
@@ -28,7 +28,8 @@ class BookSelector:
                                 author = item['volumeInfo]['authors'] if 'authors' in item['volumeInfo' else[Unknown']
                                 synopsis = item['volumeInfo]['description']
                                 pageCount = item['volumeInfo']['pageCount']
-                                books.append({title: author, rating, synopsis, pageCount})
+                                volumeId = item['accessInfo']['volumeId']
+                                books.append((volumeId,title,author,rating,synopsis,pageCount))
                                 if len(books) == n: break
                     else:
                         if 'nextPageToken' in data:
