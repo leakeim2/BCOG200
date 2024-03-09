@@ -5,10 +5,10 @@ from ReviewScraper import ReviewScraper
 from ReviewPresenter import ReviewPresenter
 
 
-def main:
+def main():
     while True:
         print("Hello. I will help you find a book. This book may be well regarded, but the consenus can be wrong and there are brutal reviews to prove it. ",
-          "Lets get started.\n"
+          "Lets get started.\n")
         print("Below is our list of genres that also have subgenres. You may browse the genres and once you click on a subgenre we will move on.")
           
         root = tk.Tk()
