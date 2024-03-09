@@ -4,7 +4,7 @@ API_KEY = 'AIzaSyBPRZp5uuPc2Sp0rpIQzZofSJDmGcWv7Q8'
 url = "https://www.googleapis.com/books/v1/volumes"
 
 class BookSelector:
-    def __init__(self, user_genre=None, user_options = True):
+    def __init__(self, user_genre, user_options):
         self.genre = user_genre
         self.numBooks = 5
         if not user_options: self.numBooks = 1
