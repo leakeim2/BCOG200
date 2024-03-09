@@ -1,7 +1,7 @@
 # give the reader those reviews from which they will pick a book based on the review and then they get the name of the book
-# books = {"Book#":{}}
-# reviews = {"Book#": [{review},{review}]
-# chosen_review = {"Book#": review}
+# books = {"1":{}}
+# reviews = {"1": [{review},{review}]
+# chosen_review = {"1": review}
 
 
 class ReviewPresenter:
@@ -11,25 +11,26 @@ class ReviewPresenter:
         self.go_forth_and_conquer()
 
     def go_forth_and_conquer(self):
-        count = 1
         for x in range(5):
-            key = "Book {}".format(x)
-            if key in self.books:
-                print(key + "Review: " + self.chosen_reviews[key]\n\n\n)
-                count++
-        if count==2:
-            self.display_choice(1)
+            if str(x) in self.books:
+                self.display_review(str(x))
+            else: 
+                self.display_choice('1')
+                break
         else: 
-            choice = input("Please enter a number 1-5 for your book selection.")
-            self.display_choice(choice)
+            x = input("Please enter a number 1-5 for your book selection.")
+            self.display_choice(str(x))
 
+    def display_review(self,key)
+        print("Review",key,":",self.chosen_reviews[key['Review']])
+        print("Reviewer:",self.chosen_reviews[key['Reviewer']])
+        print("Date Published:", self.chosen_reviews[key['Date']])
 
-    def display_choice(self, count):
-        key = "Book {}".format(count)
-        print("Here is your Book...")
-        print("\nTitle: "+ self.books[key[title]]) 
-        print("Author: "+ self.books[key[author]])
-        print("Synopsis: "+ self.books[key[synopsis]])
-        print("Page Count: "+ self.books[key[pageCount]])
+    def display_choice(self,key):
+        print("Here is your Book...\n")
+        print("Title: "+ self.books[key['title']]) 
+        print("Author: "+ self.books[key['author']])
+        print("Synopsis: "+ self.books[key['synopsis']])
+        print("Page Count: "+ self.books[key['pageCount']])
         #show picture???
         
