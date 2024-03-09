@@ -9,8 +9,9 @@ class BookSelector:
         self.numBooks = 5
         if not user_options: self.numBooks = 1
         self.books = {}
-        self.search_params = {'q': 'subject:'+self.genre, 'maxResults':20}
-        self.params = {'q':'+'.join([f"{key}:{value}" for key, value in search_params.items() if value is not None]), 'key': API_KEY}
+        self.params = {'q': f'subject:{self.genre}',
+                       'maxResults': 20,
+                       'key': API_KEY}
         self.fetch(self.numBooks)
 
     def fetch(self,n):
@@ -19,18 +20,18 @@ class BookSelector:
             if response.status_code == 200:
                 data = response.json()
                 count=1
-                for 'items' in data and len(data['items'])>0:
+                if len(data['items'])>0:
                     for item in data['items']:
                         if 'averageRating' in item['volumeInfo']:
                             rating = item['volumeInfo']['averageRating']
                             ratingNum = item['volumeInfo']['ratingsCount']
                             if rating>= 4.00 and ratingNum>500:
-                                title = item['volumeInfo]['title']
-                                author = item['volumeInfo]['authors'] if 'authors' in item['volumeInfo' else[Unknown']
-                                synopsis = item['volumeInfo]['description']
+                                title = item['volumeInfo']['title']
+                                author = item['volumeInfo']['authors'] if 'authors' in item['volumeInfo'] else['Unknown']
+                                synopsis = item['volumeInfo']['description']
                                 pageCount = item['volumeInfo']['pageCount']
                                 id = item['id']
-                                self.books[str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount})
+                                self.books[str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount}
                                 count+=1
                                 if len(self.books) == n: break
                     else:
