@@ -15,7 +15,6 @@ def main():
         b = Buttons(root)
         root.mainloop()
         genre = b.get_genre()
-        root.destroy()
           
         options = input("Would you like options of books to choose from based on reviews? Enter Y/N")
         options = True if options.upper()=='N' else False
@@ -39,5 +38,5 @@ def main():
     print("okay yay now go read.")
 
 
-if __name__ == __main__:
+if __name__ == "__main__":
     main()
