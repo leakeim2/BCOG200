@@ -16,31 +16,29 @@ class BookSelector:
 
     def fetch(self,n):
         while len(self.books)<n:
-            response = requests.get(url,params=params)
+            response = requests.get(url,params=self,params)
             if response.status_code == 200:
                 data = response.json()
                 count=1
-                if len(data['items'])>0:
-                    for item in data['items']:
-                        if 'averageRating' in item['volumeInfo']:
-                            rating = item['volumeInfo']['averageRating']
-                            ratingNum = item['volumeInfo']['ratingsCount']
-                            if rating>= 4.00 and ratingNum>500:
-                                title = item['volumeInfo']['title']
-                                author = item['volumeInfo']['authors'] if 'authors' in item['volumeInfo'] else['Unknown']
-                                synopsis = item['volumeInfo']['description']
-                                pageCount = item['volumeInfo']['pageCount']
-                                id = item['id']
-                                self.books[str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount}
-                                count+=1
-                                if len(self.books) == n: break
-                    else:
-                        if 'nextPageToken' in data:
-                            params['pageToken'] = data['nextPageToken']
-                        else: break
-                else: break
-            else: 
-                print("Error:", response.status_code)
-                break
+                for item in data['items']:
+                    if 'averageRating' in item['volumeInfo']:
+                        rating = item['volumeInfo']['averageRating']
+                        ratingNum = item['volumeInfo']['ratingsCount']
+                        if rating>= 4.00 and ratingNum>500:
+                            title = item['volumeInfo']['title']
+                            author = item['volumeInfo']['authors'] if 'authors' in item['volumeInfo'] else['Unknown']
+                            synopsis = item['volumeInfo']['description']
+                            pageCount = item['volumeInfo']['pageCount']
+                            id = item['id']
+                            self.books[str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount}
+                            count+=1
+                            if len(self.books) == n: break
+                else:
+                    if 'nextPageToken' in data:
+                        params['pageToken'] = data['nextPageToken']
+                    else: break
+            else: break
+        else: 
+            print("Error:", response.status_code)
 
 
