@@ -37,10 +37,9 @@ class ReviewScraper:
             if len(list)==0:
                 self.chosen_reviews[b] = None 
             else:
-                for x in list:
-                    #go through reviews
-                    #now I have all the reviews for this book. Idk how I will pick one out just yet
-                chosen_review = {one of the reviews} 
+                #for x in list:
+                   # not sure how I will select review. For compile purposes, I will pick a random one for now
+                chosen_review = list[0] 
                 self.chosen_reviews[b] = chosen_review
             
             
