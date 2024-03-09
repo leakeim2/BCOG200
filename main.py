@@ -14,36 +14,28 @@ def main:
         root = tk.Tk()
         b = Buttons(root)
         root.mainloop()
-        user_genre = b.get_genre()
+        genre = b.get_genre()
+        root.destroy()
           
-        user_options = input("Would you like options of books to choose from based on reviews? Enter Y/N")
-        if user_options == 'N':
-            user_options = False
-        else: user_options = True
-        # other filters maybe
-        # pass the info to Book Selector
+        options = input("Would you like options of books to choose from based on reviews? Enter Y/N")
+        options = True if options.upper()=='N' else False
         print("Sounds good. I'll take a look in the back and get you something to read")
-        b = BookSelector(user_genre, user_options) # if they don't want options then this would be just one book
+        b = BookSelector(genre, options)
         books = b.books
         r = ReviewScraper(books)
-        reviews = r.reviews
+        chosen_reviews = r.chosen_reviews
 
         stop = True
         while stop:
-            sm_to_read = ReviewPresenter(books, reviews)
-            # give the user sm_to_read
-            # once they pick a review, give them the book that correlated to that review plus the synopsis and cover
-            choice = input("Are you happy with your book? (yes/no)")
-            if choice == 'yes':
-                  break
+            something_to_read = ReviewPresenter(books, chosen_reviews)
+            choice = input("Are you happy with your book? (Y/N)")
+            if choice.upper() == 'Y': break
             else:
-                ans = input("Let's go back to the other options. If you would like to fully restart, enter 'yes'.")
-                if ans == 'yes':
+                ans = input("Let's go back to the other options (K), or you can fully restart(Y)")
+                if ans.upper() == 'Y':
                     stop=False
-        else:
-            continue
+        else: continue
         break
-    
     print("okay yay now go read.")
 
 
