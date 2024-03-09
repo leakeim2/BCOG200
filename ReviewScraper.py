@@ -9,8 +9,10 @@ class ReviewScraper:
     def __init__(self,books):
         self.books = books
         self.params = {'key': API_KEY}
-        reviews = {}
+        self.reviews = {}
+        self.chosen_reviews = {}
         self.scrap()
+        self.choose()
         
     def scrap(self):
         for b in books:
@@ -29,7 +31,16 @@ class ReviewScraper:
             else:
                 print('Error:', response.status_code)
 
-#rn its just a simple get all the reviews and put them in dictionary
-
+    def choose(self):
+        for b in self.reviews:
+            list = self.reviews[b]
+            if len(list)==0:
+                self.chosen_reviews[b] = None 
+            else:
+                for x in list:
+                    #go through reviews
+                    #now I have all the reviews for this book. Idk how I will pick one out just yet
+                chosen_review = {one of the reviews} 
+                self.chosen_reviews[b] = chosen_review
             
             
