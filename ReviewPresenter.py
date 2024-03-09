@@ -21,7 +21,7 @@ class ReviewPresenter:
             x = input("Please enter a number 1-5 for your book selection.")
             self.display_choice(str(x))
 
-    def display_review(self,key)
+    def display_review(self,key):
         print("Review",key,":",self.chosen_reviews[key['Review']])
         print("Reviewer:",self.chosen_reviews[key['Reviewer']])
         print("Date Published:", self.chosen_reviews[key['Date']])
