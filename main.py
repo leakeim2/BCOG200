@@ -23,12 +23,14 @@ def main:
         # other filters maybe
         # pass the info to Book Selector
         print("Sounds good. I'll take a look in the back and get you something to read")
-        b = BookSelector(user_genre,user_options) # if they don't want options then this would be just one book
-        reviews = ReviewScraper(b.books())
+        b = BookSelector(user_genre, user_options) # if they don't want options then this would be just one book
+        books = b.books
+        r = ReviewScraper(books)
+        reviews = r.reviews
 
         stop = True
         while stop:
-            sm_to_read = ReviewPresenter(reviews)
+            sm_to_read = ReviewPresenter(books, reviews)
             # give the user sm_to_read
             # once they pick a review, give them the book that correlated to that review plus the synopsis and cover
             choice = input("Are you happy with your book? (yes/no)")
