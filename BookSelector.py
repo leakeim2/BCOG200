@@ -30,7 +30,7 @@ class BookSelector:
                                 synopsis = item['volumeInfo]['description']
                                 pageCount = item['volumeInfo']['pageCount']
                                 id = item['id']
-                                self.books["Book" + str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount})
+                                self.books[str(count)]={'id': id,'title': title,'author': author,'rating': rating,'synopsis':synopsis,'pageCount': pageCount})
                                 count+=1
                                 if len(self.books) == n: break
                     else:
