@@ -1,15 +1,16 @@
+import requests
 #scrape multiple reviews from books --> can I somehow pick the longest reviews?
 #books = {"Book #": {'id': i, 'title': t, 'author': a, 'rating': r, 'synopsis': s, 'pageCount': p}, "Book #": {},...}
 
 API_KEY = 'AIzaSyBPRZp5uuPc2Sp0rpIQzZofSJDmGcWv7Q8'
 url = 'https://www.googleapis.com/books/v1/volumes/'
 
-#reviews = {"Book #": [{review},{other review},{other other review}...]}
 class ReviewScraper:
     def __init__(self,books):
         self.books = books
         self.params = {'key': API_KEY}
         reviews = {}
+        self.scrap()
         
     def scrap(self):
         for b in books:
