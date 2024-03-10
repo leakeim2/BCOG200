@@ -15,7 +15,7 @@ class ReviewPresenter:
             if str(x) in self.books:
                 self.display_review(str(x))
             else: 
-                self.display_choice('1')
+                self.display_choice("1")
                 break
         else: 
             x = input("Please enter a number 1-5 for your book selection.")
@@ -28,9 +28,9 @@ class ReviewPresenter:
 
     def display_choice(self,key):
         print("Here is your Book...\n")
-        print("Title: "+ self.books[key['title']]) 
-        print("Author: "+ self.books[key['author']])
-        print("Synopsis: "+ self.books[key['synopsis']])
-        print("Page Count: "+ self.books[key['pageCount']])
+        book = self.books[key]
+        print("Title:", book['title']) 
+        print("Author:", book['author'])
+        print("Synopsis:", book['synopsis'])
+        print("Page Count:", book['pageCount'])
         #show picture???
-        
