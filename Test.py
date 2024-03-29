@@ -31,9 +31,9 @@ class Test(unittest.TestCase):
 
   def testMain(self):
     # will need to test that front end of the code works with the user and test all user responses...
-    # all combinations of the choices presented
+    # m = Main(True, Y,Y,Y)
+    # and do all combinations of the last three responses where the entry may be Y,N,y,or n. And then test some responses with other letters or entries
     # ensure that the code accomodates for user error such as invalid responses and uppercase vs lowercase
-    # we will run Main with the choices preselected ie. m = Main(True, False, True)
     print("Main Testing is Complete")
     
 
