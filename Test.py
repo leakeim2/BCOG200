@@ -19,6 +19,7 @@ class Test(unittest.TestCase):
 
   def testBookSelector(self):
     # will need to test search for multiple genres as well as no preference
+    # will also need to test options/no options
     print("Book Selector Testing is Complete")
 
   def testReviewScraper(self):
@@ -31,8 +32,8 @@ class Test(unittest.TestCase):
 
   def testMain(self):
     # will need to test that front end of the code works with the user and test all user responses...
-    # m = Main(True, Y,Y,Y)
-    # and do all combinations of the last three responses where the entry may be Y,N,y,or n. And then test some responses with other letters or entries
+    # m = Main(True,Y,Y)
+    # and do all combinations of the last two responses where the entry may be Y,N,y,or n. And then test some responses with other letters or entries
     # ensure that the code accomodates for user error such as invalid responses and uppercase vs lowercase
     print("Main Testing is Complete")
     
