@@ -1,3 +1,7 @@
+#Description: The Testing will run before the User will be able to use it. The Test will cover all modules including 
+# Buttons, BookSelector, ReviewScraper, and ReviewPresenter. It will cover all combination types that the program might 
+# be presented with. Lastly, the user aspect will be tested including all combinations of responses that could be given.
+# Afterwards, the user can run their own book search.
 import unittest
 from main import Main
 from Buttons import Buttons
