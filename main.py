@@ -6,8 +6,8 @@ from ReviewPresenter import ReviewPresenter
 
 
 class Main:
-    def __init__(self,test=False,options=None,happy=None,back=None):
-        self.op = options
+    def __init__(self,test=False,happy=None,back=None):
+        self.op = None
         self.hap = happy
         self.back = back
         if test==False:
@@ -26,6 +26,8 @@ class Main:
             genre = b.get_genre()
           
             self.op = input("Would you like options of books to choose from based on reviews? Enter Y/N")
+            while (self.op.upper() != ('Y' and 'N')):
+                self.op = input("That is not Y nor N, please enter Y/N")
             self.op = True if self.op.upper()=='Y' else False
 
             print("Sounds good. I'll take a look in the back and get you something to read")
@@ -40,9 +42,13 @@ class Main:
             while stop:
                 something_to_read = ReviewPresenter(books, chosen_reviews)    
                 self.hap = input("Are you happy with your book? (Y/N)")
+                while (self.hap.upper() != ('Y' and 'N')):
+                    self.hap = input("That is not Y nor N, please enter Y/N")
                 if self.hap.upper() == 'Y': break
                 else:
-                    self.back = input("Let's go back to the other options (K), or you can fully restart(Y)")
+                    self.back = input("Let's go back to the other options (Y), or you can fully restart(N)")
+                    while (self.back.upper() != ('Y' and 'N')):
+                        self.back = input("That is not Y nor N, please enter Y/N")
                     if self.back.upper() == 'Y':
                         stop=False
             else: continue
@@ -50,25 +56,20 @@ class Main:
     
         print("okay yay now go read.")
 
+    #still work in progress
     def runTest(): 
         while True:
-            self.op = True if self.op.upper()=='Y' else False
-            
-            b = BookSelector(fiction, self.op)
-            books = b.books
-            
-            r = ReviewScraper(books)
-            chosen_reviews = r.chosen_reviews
-
             stop = True
-            while stop:
-                something_to_read = ReviewPresenter(books, chosen_reviews)    
+            while stop:   
+                if self.hap.upper() != ('Y' and 'N'): return "typo"
                 if self.hap.upper() == 'Y': break
-                else:
-                    if self.back.upper() == 'Y':
-                        stop=False
-            else: continue
-            break
+                elif self.back.upper() != ('Y' and 'N'): return "typo"
+                elif self.back.upper() == 'Y':
+                    stop=False
+                return "revisit"
+            else: 
+                return "back"
+            return "happy"
 
 if __name__ == "__main__":
     m = Main()
