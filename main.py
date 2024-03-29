@@ -10,8 +10,9 @@ class Main:
         self.op = options
         self.hap = happy
         self.back = back
+        self.run()
 
-    def Run(self):
+    def run(self):
         
         while True:
             print("Hello. I will help you find a book. This book may be well regarded, but the consenus can be wrong and there are brutal reviews to prove it. ",
@@ -50,3 +51,6 @@ class Main:
             break
     
         print("okay yay now go read.")
+
+if __name__ == "__main__":
+    m = Main()
