@@ -1,4 +1,12 @@
-# BCOG200
+DOCUMENTATION FILE:
+- User will be prompted with a description of the program and then they will select some preferences for their book search including a genre, and some other specifications
+- The program will collect a dictionary of 5 books through Book Selector Module
+- The program will pass the dictionary to the Review Scraper Module and collect 5 one-star reviews for each book
+- The program will then pass the review dictionary to the Review Presenter Module which will show the user the reviews. Then the user will be able to select a review and see the book it is correlated with
+- If the user is unhappy with their book, they may go back to the other 4 reviews they were given that correlate to 4 different books, or they may begin the program all over again.
+- This is an explanation for the main.py file which includes the program condensed and the statements that the user will read and respond to.
+
+
 BCOG 200 Project
 
 Title: "Bad Reviews(Perchance)"
