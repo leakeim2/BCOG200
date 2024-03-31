@@ -1,172 +1,40 @@
 genres = {
-    "No Preference",
-    "Art": {
-        "Architecture",
-        "Art History",
-        "Photography",
-        "Graphic Novels",
-        "Comics",
-        "Manga",
-        "No Preference"
-    },
-    "Biography": {
-        "Autobiography",
-        "Memoir",
-        "True Crime",
-        "Diary",
-        "No Preference"
-    },
-    "Business": {
-        "Finance",
-        "Economics",
-        "Leadership",
-        "Marketing",
-        "Entrepreneurship",
-        "No Preference"
-    },
-    "Children's": {
-        "Picture Books",
-        "Middle Grade",
-        "Young Adult",
-        "Children's Classics",
-        "No Preference"
-    },
-    "Classics": {
-        "Classic Literature",
-        "Ancient Literature",
-        "Mythology",
-        "Fairy Tales",
-        "Folk Tales",
-        "No Preference"
-    },
-    "Comedy": {
-        "Satire",
-        "Humor",
-        "Comedy",
-        "No Preference"
-    },
-    "Cooking": {
-        "Cookbooks",
-        "Food and Drink",
-        "Wine",
-        "No Preference"
-    },
-    "Crime": {
-        "Mystery",
-        "Thriller",
-        "Suspense",
-        "Detective",
-        "Crime",
-        "Noir",
-        "No Preference"
-    },
-    "Fantasy": {
-        "Epic Fantasy",
-        "High Fantasy",
-        "Urban Fantasy",
-        "Paranormal",
-        "Mythical Creatures",
-        "Magic",
-        "No Preference"
-    },
-    "Fiction": {
-        "Literary Fiction",
-        "Historical Fiction",
-        "Science Fiction",
-        "Dystopia",
-        "Horror",
-        "Romance",
-        "Chick Lit",
-        "Adventure",
-        "No Preference"
-    },
-    "History": {
-        "Historical",
-        "Biographical",
-        "War",
-        "Military History",
-        "No Preference"
-    },
-    "Horror": {
-        "Gothic",
-        "Supernatural",
-        "Vampires",
-        "Zombies",
-        "Haunted Houses",
-        "Monsters",
-        "No Preference"
-    },
-    "Music": {
-        "Music",
-        "Music History",
-        "Music Theory",
-        "Biographies",
-        "No Preference"
-    },
-    "Mystery": {
-        "Cozy Mystery",
-        "Police Procedural",
-        "Amateur Sleuth",
-        "Crime",
-        "Suspense",
-        "Detective",
-        "No Preference"
-    },
-    "Poetry": {
-        "Classical Poetry",
-        "Modern Poetry",
-        "Anthologies",
-        "Love Poetry",
-        "No Preference"
-    },
-    "Religion": {
-        "Christian",
-        "Islam",
-        "Buddhism",
-        "Hinduism",
-        "Religious Fiction",
-        "No Preference"
-    },
-    "Romance": {
-        "Contemporary Romance",
-        "Historical Romance",
-        "Paranormal Romance",
-        "Erotic Romance",
-        "LGBT Romance",
-        "No Preference"
-    },
-    "Science": {
-        "Popular Science",
-        "Science",
-        "Biology",
-        "Physics",
-        "Chemistry",
-        "Astronomy",
-        "Geology",
-        "No Preference"
-    },
-    "Science Fiction": {
-        "Hard Science Fiction",
-        "Space Opera",
-        "Aliens",
-        "Dystopia",
-        "Cyberpunk",
-        "No Preference"
-    },
-    "Self Help": {
-        "Personal Development",
-        "Self Improvement",
-        "Motivational",
-        "No Preference"
-    },
-    "Sports": {
-        "Sports",
-        "Biographies",
-        "No Preference"
-    },
-    "Travel": {
-        "Travel",
-        "Adventure",
-        "No Preference"
-    }
+    "No Preference":"1.Best_Books_Ever",
+    "Art": "2390.Best_Art_and_Art_History_Books",
+    "Graphic Novels": "210.Best_Graphic_Novels",
+    "Manga": "489",
+    "Memoir": "281.Best_Memoir_Biography_Autobiography",
+    "Business": "1170.Best_Business_Books",
+    "Children's": "86.Best_Children_s_Books",
+    "Picture Books": "460.Best_Picture_Books",
+    "Humor": "312.Best_Humorous_Books",
+    "Fantasy": "88",
+    "Epic Fantasy": "50.The_Best_Epic_Fantasy_fiction_",
+    "Urban Fantasy": "51.The_Best_Urban_Fantasy",
+    "Non-Fiction": "134.Best_Non_Fiction_no_biographies_",
+    "YA Realistic Fiction": "1736.Best_Teen_Books_About_Real_Problems",
+    "Classics": "2522.Cult_Classics",
+    "Historical Fiction": "15.Best_Historical_Fiction",
+    "Science Fiction": "19341.Best_Science_Fiction",
+    "Gay Fiction": "445.Best_Gay_Fiction",
+    "Dystopia": "47.Best_Dystopian_and_Post_Apocalyptic_Fiction",
+    "History": "1362.Best_History_Books_",
+    "Feminist": "62.Best_Feminist_Books",
+    "War": "824.Best_Non_fiction_War_Books",
+    "Horror": "135.Best_Horror_Novels",
+    "Gothic": "1230.Best_Gothic_Books_Of_All_Time",
+    "Vampires": "129.Best_Adult_Vampire_Books",
+    "Mystery": "11.Best_Crime_Mystery_Books",
+    "Thrillers": "8306.Thrillers_You_Must_Read_",
+    "Poetry": "36.Best_Poetry_Books",
+    "Christian": "946.Books_Besides_the_Bible_Recommended_for_Christian_Readers",
+    "Romance": "12362.All_Time_Favorite_Romance_Novels",
+    "Contemporary Romance": "57.Best_Ever_Contemporary_Romance_Books",
+    "YA Romance": "1333.Young_Adult_Romance",
+    "Paranormal Romance": "397.Best_Paranormal_Romance_Series",
+    "Fantasy Romance": "9088.Best_ADULT_Urban_Fantasy_Fantasy_and_Paranormal_Romance",
+    "Social Justice": "851.Social_Justice_Books_on_Racism_Sexism_and_Class",
+    "Psychology": "1295.Greatest_Psychology_Books",
+    "Self Help": "691.Best_Self_Help_Books",
+    "Travel": "633.Favorite_Travel_Books",
 }
