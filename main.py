@@ -1,5 +1,5 @@
 import tkinter as tk
-from Buttons import Buttons
+from Buttons import createButtons
 from BookSelector import BookSelector
 from ReviewScraper import ReviewScraper
 from ReviewPresenter import ReviewPresenter
@@ -18,12 +18,9 @@ class Main:
         while True:
             print("Hello. I will help you find a book. This book may be well regarded, but the consenus can be wrong and there are brutal reviews to prove it. ",
                   "Lets get started.\n")
-            print("Below is our list of genres that also have subgenres. You may browse the genres and once you click on a subgenre we will move on.")
+            print("Below is our list of genres from which you may choose.")
           
-            root = tk.Tk()
-            b = Buttons(root)
-            root.mainloop()
-            genre = b.get_genre()
+            genre = createButtons()
           
             self.op = input("Would you like options of books to choose from based on reviews? Enter Y/N")
             while (self.op.upper() != ('Y' and 'N')):
