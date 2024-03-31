@@ -1,4 +1,3 @@
-import tkinter as tk
 from Buttons import createButtons
 from BookSelector import BookSelector
 from ReviewScraper import ReviewScraper
