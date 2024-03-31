@@ -22,7 +22,7 @@ class Buttons:
     def get_genre(self):
         return self.genre
 
-def createButtons:
+def createButtons():
     root = tk.TK()
     b = Buttons(root)
     root.mainloop()
