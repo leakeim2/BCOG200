@@ -1,44 +1,72 @@
-#Description: This is what the user may run to test the program. It will cover all combinations the program is expected to run which includes testing the classes 
-# individually, and then testing the main file to ensure that user interaction runs smoothly. 
-import unittest
-from Main import Main
-from Buttons import Buttons
+#test file
+#Description: Test, no user interaction. To use program instead of testing, use main.py
+from main import Main
 from BookSelector import BookSelector
 from ReviewScraper import ReviewScraper
 from ReviewPresenter import ReviewPresenter
 
+#test BookSelector file. Check that the correct number of books exist within the books dicitonary.
+def testBookSelector(b1,b2):
+    failed = False
+    if len(b1.books)== 5 and len(b2.books) == 1:
+        for x in b1.books:
+            if (x not in ['1','2','3','4','5'] or
+            b1.books[x]['url'] == None or
+            b1.books[x]['title'] == None or
+            b1.books[x]['author'] == None or
+            b1.books[x]['rating'] < 4.00 or
+            b1.books[x]['pageCount'] < 100 or
+            b1.books[x]['synopsis'] == None):
+                failed = True
+            if '1' not in b2.books: failed = True
+    if failed == False: return("Book Selector Testing is Complete")
+    raise AssertionError('BookSelector test failed')
 
-class Test(unittest.TestCase):
-  def testButtons(self):
-    # will need to include selection of...
-    # genre and subgenre
-    # genre and no preference
-    # no preference
-    # will also need to test that the back button works
-    print("Buttons Testing is Complete")
-
-  def testBookSelector(self):
-    # will need to test search for multiple genres as well as no preference
-    # will also need to test options/no options
-    print("Book Selector Testing is Complete")
-
-  def testReviewScraper(self):
+#test ReviewScraper file. Check that number of reviews matches to books, and that they exist.
+def testReviewScraper(r):
     # will need to test that a sufficient review is collected for each book, for different selections of books
-    print("Review Scraper Testing is Complete")
+    failed = False
+    if len(r.reviews) != 5: failed = True
+    for x in r.reviews:
+        for w in r.reviews[x]:
+            if w==None: failed = True
+    if len(r.chosen_reviews) !=5: failed = True
+    for x in r.chosen_reviews:
+        if r.chosen_reviews[x] == None: failed = True
+    if failed == False: return("Review Scraper Testing is Complete")
+    raise AssertionError('ReviewScraper test failed')
 
-  def testReviewPresenter(self):
-    # will need to test that the reviews and book information is displayed properly and that the user instruction works properly
-    print("Review Presenter Testing is Complete")
-
-  def testMain(self):
-    # will need to test that front end of the code works with the user and test all user responses...
-    # m = Main(True,Y,Y)
-    # and do all combinations of the last two responses where the entry may be Y,N,y,or n. And then test some responses with other letters or entries
-    # ensure that the code accomodates for user error such as invalid responses and uppercase vs lowercase
-    print("Main Testing is Complete")
+#test ReviewPresenter file. 
+def testReviewPresenter(p):
     
+    return("ReviewPresenter Testing is Complete")
+    #raise AssertionError('ReviewPresenter test failed')
+
+#test main file. Check that user instructions leads to the right pathway.
+def testMain():
+    m = Main(True,'Y','Y')
+    if m.result == 'happy':
+        m = Main(True,'Y','N')
+        if m.result == 'happy':
+            m = Main(True,'N','Y')
+            if m.result == 'back':
+                m = Main(True,'N','N')
+                if m.result == 'revisit':
+                    m = Main(True,'t','N')
+                    if m.result == 'typo':
+                        m = Main(True,'N','p')
+                        if m.result == 'typo':
+                            return ("Main Testing is Complete")
+    raise AssertionError('main test failed')
 
 if __name__ == "__main__":
-  unittest.main()
-  print("\nYay your code works;)")
-
+    b1 = BookSelector('No Preference')
+    b2 = BookSelector('No Preference',False)
+    r = ReviewScraper(b1.books,'No Preference')
+    #p = ReviewPresenter(b1.books,r.chosen_reviews)
+    print(testButtons())
+    print(testBookSelector(b1,b2))
+    print(testReviewScraper(r))
+    #print(testReviewPresenter(p))
+    print(testMain())
+    print("\nYay your code works;)")
