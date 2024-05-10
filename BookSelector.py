@@ -1,4 +1,3 @@
-import requests
 from genres import genres
 import pandas as pd
 
@@ -11,6 +10,7 @@ class BookSelector:
         self.books = {}
         self.fetch(self.numBooks)
 
+    #collect n books that have rating of at least 4 starts. Then compile that books information into a dicitonary within self.books
     def fetch(self,n):
         self.books_df['rating']= pd.to_numeric(self.books_df['rating'],errors='coerce')
         df = self.books_df.dropna(subset=['rating'])
