@@ -1,45 +1,38 @@
-import requests
-#scrape multiple reviews from books --> can I somehow pick the longest reviews?
-#books = {"Book #": {'id': i, 'title': t, 'author': a, 'rating': r, 'synopsis': s, 'pageCount': p}, "Book #": {},...}
-
-API_KEY = 'AIzaSyBPRZp5uuPc2Sp0rpIQzZofSJDmGcWv7Q8'
-url = 'https://www.googleapis.com/books/v1/volumes/'
+from BookSelector import BookSelector
+from genres import genres
+import pandas as pd
+from textblob import TextBlob
+#scrape multiple reviews from books. Use sentiment to pick most passionate reviews
+#books = {"#": {'url': u, 'title': t, 'author': a, 'rating': r, 'synopsis': s, 'pageCount': p}, "Book #": {},...}
 
 class ReviewScraper:
-    def __init__(self,books):
+    def __init__(self,books,genre):
         self.books = books
-        self.params = {'key': API_KEY}
+        self.genre = genre
+        self.reviews_df = pd.read_csv('Review_'+genres[self.genre]+'.csv',encoding='latin-1')
         self.reviews = {}
         self.chosen_reviews = {}
         self.scrap()
         self.choose()
         
     def scrap(self):
-        for b in books:
-            reviews[b] = []
-            response = requests.get(url+books[b['id']],params=params)
-            if response.status_code == 200:
-                data = response.json()
-                review_data = data.get('volumeInfo',{}).get('reviews',[])
-                for r in review_data:
-                    rating = r.get('rating')
-                    if rating and int(rating) ==1:
-                        content = r.get('content','No review text')
-                        reviewer = r.get('author',{}).get('displayName','Anonymous')
-                        date = r.get('published','Unknown')
-                        reviews[b].append({'Review': content, 'Reviewer': reviewer,'Date': date})
-            else:
-                print('Error:', response.status_code)
+        count = 1
+        for b in self.books:
+            url = self.books[b]['url']
+            df = self.reviews_df[url]
+            self.reviews[str(count)]= df.tolist()
+            count+=1
+            
 
     def choose(self):
         for b in self.reviews:
-            list = self.reviews[b]
-            if len(list)==0:
-                self.chosen_reviews[b] = None 
-            else:
-                #for x in list:
-                   # not sure how I will select review. For compile purposes, I will pick a random one for now
-                chosen_review = list[0] 
-                self.chosen_reviews[b] = chosen_review
-            
-            
+            rev = self.reviews[b]
+            chosen = str(rev[0])
+            print(chosen)
+            least_polarity = TextBlob(chosen).sentiment.polarity
+            for x in rev:
+                temp_pol = TextBlob(str(x)).sentiment.polarity
+                if temp_pol<least_polarity:
+                    least_polarity = temp_pol
+                    chosen = str(x)
+                self.chosen_reviews[b] = chosen    
