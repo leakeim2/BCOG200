@@ -4,6 +4,7 @@ import pandas as pd
 from textblob import TextBlob
 #scrape multiple reviews from books. Use sentiment to pick most passionate reviews
 #books = {"#": {'url': u, 'title': t, 'author': a, 'rating': r, 'synopsis': s, 'pageCount': p}, "Book #": {},...}
+#reviews = { '#':[],...}
 
 class ReviewScraper:
     def __init__(self,books,genre):
@@ -14,7 +15,8 @@ class ReviewScraper:
         self.chosen_reviews = {}
         self.scrap()
         self.choose()
-        
+
+    #collecting all the reviews into a dictionary of lists
     def scrap(self):
         count = 1
         for b in self.books:
@@ -23,7 +25,7 @@ class ReviewScraper:
             self.reviews[str(count)]= df.tolist()
             count+=1
             
-
+    # we are picking the review with the lowest polarity for each book. Some may say negative, but I say passionate.
     def choose(self):
         for b in self.reviews:
             rev = self.reviews[b]
