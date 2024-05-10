@@ -36,12 +36,6 @@ def testReviewScraper(r):
     if failed == False: return("Review Scraper Testing is Complete")
     raise AssertionError('ReviewScraper test failed')
 
-#test ReviewPresenter file. 
-def testReviewPresenter(p):
-    
-    return("ReviewPresenter Testing is Complete")
-    #raise AssertionError('ReviewPresenter test failed')
-
 #test main file. Check that user instructions leads to the right pathway.
 def testMain():
     m = Main(True,'Y','Y')
@@ -63,9 +57,7 @@ if __name__ == "__main__":
     b1 = BookSelector('No Preference')
     b2 = BookSelector('No Preference',False)
     r = ReviewScraper(b1.books,'No Preference')
-    #p = ReviewPresenter(b1.books,r.chosen_reviews)
     print(testBookSelector(b1,b2))
     print(testReviewScraper(r))
-    #print(testReviewPresenter(p))
     print(testMain())
     print("\nYay your code works;)")
