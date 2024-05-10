@@ -64,7 +64,6 @@ if __name__ == "__main__":
     b2 = BookSelector('No Preference',False)
     r = ReviewScraper(b1.books,'No Preference')
     #p = ReviewPresenter(b1.books,r.chosen_reviews)
-    print(testButtons())
     print(testBookSelector(b1,b2))
     print(testReviewScraper(r))
     #print(testReviewPresenter(p))
