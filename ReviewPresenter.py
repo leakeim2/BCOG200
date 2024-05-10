@@ -11,26 +11,19 @@ class ReviewPresenter:
         self.go_forth_and_conquer()
 
     def go_forth_and_conquer(self):
-        for x in range(5):
-            if str(x) in self.books:
-                self.display_review(str(x))
-            else: 
-                self.display_choice("1")
-                break
-        else: 
-            x = input("Please enter a number 1-5 for your book selection.")
-            self.display_choice(str(x))
+        for b in self.books:
+            self.display_review(b)
+        x = input("\nPlease enter a number 1-5 for your book selection.")
+        self.display_choice(str(x))
 
     def display_review(self,key):
-        print("Review",key,":",self.chosen_reviews[key['Review']])
-        print("Reviewer:",self.chosen_reviews[key['Reviewer']])
-        print("Date Published:", self.chosen_reviews[key['Date']])
+        print("REVIEW",key+":")
+        print(self.chosen_reviews[key],'\n')
 
     def display_choice(self,key):
-        print("Here is your Book...\n")
+        print("\nHere is your Book...\n")
         book = self.books[key]
-        print("Title:", book['title']) 
-        print("Author:", book['author'])
-        print("Synopsis:", book['synopsis'])
-        print("Page Count:", book['pageCount'])
-        #show picture???
+        print("TITLE:", book['title']) 
+        print("AUTHOR:", book['author'])
+        print("SYNOPSIS:", book['synopsis'])
+        print("PAGE COUNT:", book['pageCount'])
